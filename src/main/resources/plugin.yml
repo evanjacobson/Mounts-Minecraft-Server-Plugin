@@ -1,0 +1,24 @@
+name: Mounts
+version: '1.0-SNAPSHOT'
+main: Mounts.Mounts
+api-version: '1.21'
+authors: [ Evan J ]
+commands:
+  mount:
+    description: "Get a mount or set currently held item as a mount"
+    usage: "/mount [owner]"
+    permissions: mounts.admin
+  mountedit:
+    description: "Add/Edit mount attributes"
+    usage: "/mountedit <attribute> <decimal value | unset>"
+    permissions: mounts.admin
+permissions:
+  mounts.admin:
+    default: op
+    description: allows /mount, /mountedit, and riding any mount regardless of ownership
+  mounts.spawn:
+    default: op
+    description: right click a mount to spawn a mount horse
+  mounts.spawn.reuse:
+    default: op
+    description: do not lose your mount item once a horse is spawned
